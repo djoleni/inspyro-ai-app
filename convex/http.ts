@@ -69,6 +69,11 @@ http.route({
 
         }
 
+        // TODO: HANDLE THE user.updated EVENT
+
+
+
+
         return new Response('Webhook processed successfully', {status:200});
 
 
