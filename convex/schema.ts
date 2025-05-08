@@ -11,7 +11,7 @@ export default defineSchema({
     }).index('by_clerk_id', ['clerkId']), //by_clerk_id is index name, querying by clerkId
 
     plans: defineTable({
-        userId: v.id('users'), //referenca na automatski generisani _id u users tabeli, ne na clerkId
+        userId: v.string(), //referenca na automatski generisani _id u users tabeli, ne na clerkId
         name: v.string(),
         workoutPlan: v.object({
             schedule: v.array(v.string()), //days of the week
