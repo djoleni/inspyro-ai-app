@@ -222,18 +222,18 @@ const GenerateProgramPage = () => {
               >
                 <div
                   className={`w-2 h-2 rounded-full ${
-                    isSpeaking ? "bg-primary animate-pulse" : "bg-muted"
+                    isSpeaking ? "bg-primary animate-pulse" : "bg-green-500"
                   }`}
                 />
 
-                <span className="text-xs text-muted-foreground">
+                <span className={`text-xs text-muted-foreground`}>
                   {isSpeaking
                     ? "Speaking..."
                     : callActive
                       ? "Listening..."
                       : callEnded
                         ? "Redirecting to profile..."
-                        : "Waiting..."}
+                        : "Ready"}
                 </span>
               </div>
             </div>
@@ -256,10 +256,10 @@ const GenerateProgramPage = () => {
                 {user ? (user.firstName + " " + (user.lastName || "")).trim() : "Guest"}
               </p>
 
-              {/* User Ready Text */}
+              {/* User Status Text */}
               <div className={`mt-4 flex items-center gap-2 px-3 py-1 rounded-full bg-card border`}>
-                <div className={`w-2 h-2 rounded-full bg-muted`} />
-                <span className="text-xs text-muted-foreground">Ready</span>
+                <div className={`w-2 h-2 rounded-full ${callActive? "bg-green-500" : 'bg-muted'}`} />
+                <span className="text-xs text-muted-foreground">{callActive? "Ready" : "Waiting..."}</span>
               </div>
             </div>
           </Card>
